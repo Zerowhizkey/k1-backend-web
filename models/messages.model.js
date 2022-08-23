@@ -12,7 +12,7 @@ function addMessage({ msg, room_id, user_id, user_name, date }) {
 }
 
 function getMessages(roomId) {
-	const sql = "SELECT * FROM messages WHERE room_id = $1";
+	const sql = "SELECT * FROM messages WHERE room_id = ?";
 	return db.query(sql, [roomId], (error, room) => {
 		if (error) {
 			console.error(error.message);
@@ -22,7 +22,7 @@ function getMessages(roomId) {
 }
 
 function deleteMessages(roomId) {
-	const sql = "DELETE from messages where room_id = $1";
+	const sql = "DELETE from messages where room_id = ?";
 	return db.query(sql, [roomId], (error, room) => {
 		if (error) {
 			console.error(error.message);
