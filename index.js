@@ -4,6 +4,7 @@ const io = new Server(port, {
 	cors: {
 		origin: "*",
 		methods: ["GET", "POST"],
+		credentials: true,
 	},
 });
 const fs = require("fs");
