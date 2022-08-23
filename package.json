@@ -6,5 +6,25 @@
     "socket.io": "^4.5.1",
     "sqlite3": "^5.0.8",
     "uuid": "^8.3.2"
-  }
+  },
+  "name": "k3-backend-main",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "start": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zerowhizkey/k1-backend-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zerowhizkey/k1-backend-web/issues"
+  },
+  "homepage": "https://github.com/Zerowhizkey/k1-backend-web#readme",
+  "description": ""
 }
