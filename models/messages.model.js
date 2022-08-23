@@ -26,7 +26,6 @@ function deleteMessages(roomId) {
 	return db.query(sql, [roomId], (error, room) => {
 		if (error) {
 			console.error(error.message);
-			reject(error);
 		}
 		return room;
 	});
