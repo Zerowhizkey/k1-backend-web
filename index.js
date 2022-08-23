@@ -2,7 +2,7 @@ const port = process.env.PORT;
 const { Server } = require("socket.io");
 const io = new Server(port, {
 	cors: {
-		origin: "*",
+		origin: ["https://k1-backend-web.herokuapp.com"],
 		methods: ["GET", "POST"],
 		credentials: true,
 	},
