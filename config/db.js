@@ -32,8 +32,7 @@ const db = new Client({
 	ssl: {
 		rejectUnauthorized: false,
 	},
-	connectionString:
-		"postgres://fwmqdpixjfhxde:bf594a55557ad3580ga85cb8af44b2e8809a21903268697e61eb602d448da84c@ec2-14-253-119-24.eu-west-1.compute.amazonaws.com:5432/dnqk6u2hrj8d71",
+	connectionString: process.env.DATABASE_URL,
 });
 
 db.connect();

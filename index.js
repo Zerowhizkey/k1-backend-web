@@ -1,4 +1,4 @@
-const port = "https://git.heroku.com/k1-backend-web.git";
+const port = process.env.PORT;
 const { Server } = require("socket.io");
 const io = new Server(port, {
 	cors: {
