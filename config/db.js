@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS messages
       room_id TEXT,
         user_id TEXT,
 		user_name TEXT,
-		date INTEGER,
+		date TEXT,
          CONSTRAINT fk_room_id FOREIGN KEY(room_id) REFERENCES rooms(name) ON DELETE CASCADE,
           CONSTRAINT fk_user_id FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
           )`;
