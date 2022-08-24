@@ -1,44 +1,28 @@
 const db = require("../config/db");
 
-function createUser(id, name) {
+async function createUser(id, name) {
 	const sql = "INSERT INTO users (id, name) VALUES ($1, $2)";
-	return db.query(sql, [id, name], function (error, user) {
-		if (error) {
-			console.error(error.message);
-		}
-		return user;
-	});
-}
+	let result = await db.query(sql, [id, name])
+		return result.rows[0]
+	}
 
-function getUser(id) {
+async function getUser(id) {
 	const sql = "SELECT * FROM users WHERE id = ?";
-	return db.query(sql, id, (error, user) => {
-		if (error) {
-			console.error(error.message);
-		}
-		return user;
-	});
-}
+	let result = await db.query(sql, id)
+		return result.rows[0]
+	}
 
-function getAllUser() {
+async function getAllUser() {
 	const sql = "SELECT * FROM users";
-	return db.query(sql, (error, users) => {
-		if (error) {
-			console.error(error.message);
-		}
-		return users;
-	});
-}
+	let result = await db.query(sql)
+		return result.rows
+	}
 
-function deleteUser(name) {
+async function deleteUser(name) {
 	const sql = "DELETE FROM users WHERE name = ?";
-	return db.query(sql, name, (error) => {
-		if (error) {
-			console.error(error.message);
-		}
-		return;
-	});
-}
+	let result = await db.query(sql, name)
+		return result.rows[0]
+	}
 
 module.exports = {
 	createUser,
