@@ -21,7 +21,7 @@ async function getAllUser() {
 async function deleteUser(name) {
 	const sql = "DELETE FROM users WHERE name = $1";
 	let result = await db.query(sql, name)
-		return result.rows[0]
+		return result.rows
 	}
 
 module.exports = {

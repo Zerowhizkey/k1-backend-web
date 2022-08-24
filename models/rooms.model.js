@@ -21,7 +21,7 @@ async function getAllRooms() {
 async function deleteRoom(name) {
 	const sql = "DELETE FROM rooms WHERE name = $1";
 	let result = await db.query(sql, name)
-		return result.rows[0];
+		return result.rows
 	}
 
 module.exports = {
