@@ -79,7 +79,7 @@ io.on("connection", async (socket) => {
 		// const user = await getUser(socket.id);
 
 		const rooms = await getAllRooms();
-
+console.log(rooms)
 		const checkRoom = rooms.filter((room) => {
 			return room.name === name;
 		});
