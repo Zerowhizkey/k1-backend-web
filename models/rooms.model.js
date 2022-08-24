@@ -1,18 +1,14 @@
 const db = require("../config/db");
 
-function createRoom(name) {
+async function createRoom(name) {
 	const sql = "INSERT INTO rooms (name) VALUES ($1)";
-	return db.query(sql, [name], function (error, room) {
-		if (error) {
-			console.error(error.message);
-		}
-		return room;
-	});
-}
+	let result = await db.query(sql, [name])
+		return result.rows[0]
+	}
 
 async function getRoom(id) {
 	const sql = "SELECT * FROM rooms WHERE id = ?";
-	let result = db.query(sql, id)
+	let result = await db.query(sql, id)
 		return result.rows[0];
 }
 
@@ -22,15 +18,11 @@ async function getAllRooms() {
 	return result.rows
 }
 
-function deleteRoom(name) {
+async function deleteRoom(name) {
 	const sql = "DELETE FROM rooms WHERE name = ?";
-	return db.query(sql, name, (error) => {
-		if (error) {
-			console.error(error.message);
-		}
-		return name;
-	});
-}
+	let result = await db.query(sql, name)
+		return result.rows[0];
+	}
 
 module.exports = {
 	createRoom,
