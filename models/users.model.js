@@ -7,7 +7,7 @@ async function createUser(id, name) {
 	}
 
 async function getUser(id) {
-	const sql = "SELECT * FROM users WHERE id = ?";
+	const sql = "SELECT * FROM users WHERE id = $1";
 	let result = await db.query(sql, id)
 		return result.rows[0]
 	}
@@ -19,7 +19,7 @@ async function getAllUser() {
 	}
 
 async function deleteUser(name) {
-	const sql = "DELETE FROM users WHERE name = ?";
+	const sql = "DELETE FROM users WHERE name = $1";
 	let result = await db.query(sql, name)
 		return result.rows[0]
 	}
