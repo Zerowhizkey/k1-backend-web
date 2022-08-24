@@ -10,14 +10,10 @@ function createRoom(name) {
 	});
 }
 
-function getRoom(id) {
+async function getRoom(id) {
 	const sql = "SELECT * FROM rooms WHERE id = ?";
-	return db.query(sql, id, (error, room) => {
-		if (error) {
-			console.error(error.message);
-		}
-		return room;
-	});
+	let result = db.query(sql, id)
+		return result.rows[0];
 }
 
 async function getAllRooms() {
