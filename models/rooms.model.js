@@ -22,11 +22,11 @@ function getRoom(id) {
 
 function getAllRooms() {
 	const sql = "SELECT * FROM rooms";
-	return db.query(sql, (error, rooms) => {
+	return db.query(sql, (error, result) => {
 		if (error) {
 			console.error(error.message);
 		}
-		return rooms;
+		return result.rows;
 	});
 }
 
