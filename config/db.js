@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS messages
 (
     id SERIAL PRIMARY KEY,
      msg TEXT NOT NULL,
-      room_id TEXT,
+      room_id INTEGER,
         user_id TEXT,
 		user_name TEXT,
 		date INTEGER,
