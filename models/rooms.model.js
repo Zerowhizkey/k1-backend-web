@@ -8,7 +8,7 @@ async function createRoom(name) {
 
 async function getRoom(id) {
 	const sql = "SELECT * FROM rooms WHERE id = $1";
-	let result = await db.query(sql, id)
+	let result = await db.query(sql, [id])
 		return result.rows[0];
 }
 
@@ -20,7 +20,7 @@ async function getAllRooms() {
 
 async function deleteRoom(name) {
 	const sql = "DELETE FROM rooms WHERE name = $1";
-	let result = await db.query(sql, name)
+	let result = await db.query(sql, [name])
 		return result.rows
 	}
 
