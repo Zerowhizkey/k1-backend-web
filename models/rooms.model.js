@@ -20,14 +20,10 @@ function getRoom(id) {
 	});
 }
 
-function getAllRooms() {
+async function getAllRooms() {
 	const sql = "SELECT * FROM rooms";
-	return db.query(sql, (error, result) => {
-		if (error) {
-			console.error(error.message);
-		}
-		return result.rows;
-	});
+	let result = await db.query(sql)
+	return result.rows
 }
 
 function deleteRoom(name) {
